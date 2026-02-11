@@ -1,0 +1,16 @@
+{
+  "short_name": "Arpeta TaskFlow Projesi",
+  "name": "Arpeta TaskFlow Projesi - Görev ve proje yönetimi",
+  "description": "Görev ve proje yönetimi uygulaması. Arpeta Yazılım.",
+  "lang": "tr",
+  "start_url": ".",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0f172a",
+  "background_color": "#f1f5f9",
+  "icons": [
+    { "src": "favicon.ico", "sizes": "48x48", "type": "image/x-icon" },
+    { "src": "favicon.ico", "sizes": "64x64", "type": "image/x-icon" }
+  ]
+}

@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tf-font: "Plus Jakarta Sans", system-ui, sans-serif;
+  --tf-dark: #0f172a;
+  --tf-dark-soft: #1e293b;
+  --tf-accent: #0d9488;
+  --tf-accent-hover: #0f766e;
+  --tf-accent-light: #ccfbf1;
+  --tf-surface: #f1f5f9;
+  --tf-card: #ffffff;
+  --tf-border: #e2e8f0;
+  --tf-text: #0f172a;
+  --tf-text-muted: #64748b;
+  --tf-radius: 12px;
+  --tf-radius-lg: 16px;
+  --tf-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --tf-shadow-lg: 0 10px 40px -10px rgba(15, 23, 42, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--tf-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--tf-text);
+  background: var(--tf-surface);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Ant Design override – primary rengi teal */
+.ant-btn-primary {
+  background: var(--tf-accent) !important;
+  border-color: var(--tf-accent) !important;
+  box-shadow: 0 1px 2px rgba(13, 148, 136, 0.2) !important;
+}
+.ant-btn-primary:hover {
+  background: var(--tf-accent-hover) !important;
+  border-color: var(--tf-accent-hover) !important;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3) !important;
+}
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--tf-accent) !important;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15) !important;
+}
+.ant-select-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: var(--tf-accent) !important;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15) !important;
+}
+
+/* Landing – modern entrance */
+@keyframes landing-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.landing-animate {
+  animation: landing-fade-in 0.6s ease-out forwards;
+}
+.landing-animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.landing-animate-delay-2 { animation-delay: 0.25s; opacity: 0; }
+.landing-animate-delay-3 { animation-delay: 0.4s; opacity: 0; }
