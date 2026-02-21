@@ -24,7 +24,8 @@ TaskFlow Proje ve Görev Yönetim Sistemi için backend servisi.
    DB_PASSWORD=sifreniz
    DB_NAME=taskflow
    JWT_SECRET=gizli_anahtariniz
-   PORT=5000
+   JWT_EXPIRES_IN=24h
+   PORT=3000
    ```
 
 3. **Veritabanını Hazırlayın:**

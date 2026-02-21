@@ -22,12 +22,9 @@ router.get('/', (req, res) => {
   });
 });
 
-// Geçici: İlk admin kullanıcısı için authentication'ı kaldırdık
-// İlk admin'i oluşturduktan sonra bu satırı silip alttaki satırı aktif edin
-// router.post('/register', authController.register);
-
-// Kullanıcı kaydı (sadece admin) - İlk admin oluşturulduktan sonra aktif edin
+// Kullanıcı kaydı (sadece admin yapabilir)
 router.post('/register', authenticate, authorize('admin'), authController.register);
+
 
 // Kullanıcı girişi (herkes)
 router.post('/login', authController.login);

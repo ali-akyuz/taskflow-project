@@ -1,0 +1,33 @@
+/**
+ * JWT Yardımcı Fonksiyonlar
+ * Token oluşturma ve doğrulama işlemleri
+ */
+
+const jwt = require('jsonwebtoken');
+
+const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '24h';
+
+/**
+ * JWT token oluştur
+ * @param {Object} payload - Token içine gömülecek veri {id, username, role}
+ * @returns {String} JWT token
+ */
+function generateToken(payload) {
+  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+}
+
+/**
+ * JWT token doğrula
+ * @param {String} token - Doğrulanacak JWT token
+ * @returns {Object} Decoded payload
+ * @throws {Error} Token geçersizse veya süresi dolmuşsa hata fırlatır
+ */
+function verifyToken(token) {
+  return jwt.verify(token, JWT_SECRET);
+}
+
+module.exports = {
+  generateToken,
+  verifyToken
+};
